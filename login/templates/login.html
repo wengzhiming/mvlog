@@ -45,20 +45,32 @@
     </style>
 </head>
 <body ">
+  <script >
+    function checkNOnull(){
+      var name = document.getElementById("username").value;
+      var pwd = document.getElementById("password").value;
+      if(name=="" || pwd==""){
+        alert("用户名或密码不能为空")
+        return false;
+      }
+      
+      return true;
+    }
+    </script>
     <!-- 登录表单 -->
 <div >
         <div class="center-block" id="main" >
             <!-- 登录 -->
         <h3 class='login'>账号登陆</h3>
         <!-- 登录表单 -->
-        <form class="form-horizontal"  action="">
+        <form class="form-horizontal"  action="#" method="POST"   onsubmit="return checkNOnull()">
             <!-- 用户名 -->
             <div class="form-group">
               <div class="input-group">
                 <div class="input-group-addon">
                     <img src="/static/img/icon/person.svg" width="20px " alt="">
                 </div>
-                <input type="text" class="form-control" id="exampleInputAmount" placeholder="用户名">
+                <input type="text" class="form-control" id="username" placeholder="用户名">
               </div>
             </div>
             <!-- 密码  -->
@@ -73,10 +85,10 @@
             
             <div style="text-align:right; "><a href="" >忘记密码?</a></div>
             <!-- 提交按钮 -->
-            <button  class="btn-info" style="margin: 10px 0 0 5px;width: 100%;height: 30px;border-radius: 5px;">登录</button>
+            <button type="submit" class="btn-info" style="margin: 10px 0 0 5px;width: 100%;height: 30px;border-radius: 5px;">登录</button>
           </form>
             <div style="text-align: right; padding: 5px ; display: inline;">
-                <p>还没有账号？<a href="" >立即注册</a></p>
+                <p>还没有账号？<a href="/login/templates/register.html" >立即注册</a></p>
                 </div>
         </div>
 </div>    
